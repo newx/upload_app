@@ -1,0 +1,8 @@
+<%= form_tag({ action: :create }, multipart: true) do %>
+  <div class="form-group">
+    <input type="hidden" name="app_file[file_data]" value="<%= @app_file.try(:cached_file_data) %>" class="upload-hidden">
+    <input type="file" name="app_file[file_data]" class="upload-file">
+  </div>
+
+   <%= submit_tag("Upload") %>
+<% end %>
